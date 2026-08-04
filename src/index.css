@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+/* Custom colors */
+@theme {
+  --color-background: #0b0c10;
+  --color-foreground: #e5e7eb;
+
+  --color-card: #12141a;
+
+  --color-primary: #7c7cff;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #1b1f2a;
+  --color-secondary-foreground: #7c7cff;
+
+  --color-muted: #24283a;
+  --color-muted-foreground: #9aa0b5;
+
+  --color-border: #2c3042;
+
+  --radius: 0.75rem;
+
+  --color-highlight: #00e5ff;
+  --color-surface: #161925;
+}
+
+
+@layer base {
+  html{
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Inter", sans-serif;
+  }
+
+  button {
+    cursor: pointer; 
+  }
+
+  .font-serif {
+    font-family: "Playfair Display", serif
+  }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px var(--color-surface) inset !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+}
+
+@layer components {
+  .glass {
+    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  }
+  
+  .glass-strong {
+    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    backdrop-filter: blur(24px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 30px
+      color-mix(in srgb, var(--color-primary)50%, transparent);
+  }
+
+  /* Profile images border */
+  .glow-border {
+    box-shadow: 0 0 20px 
+        color-mix(in srgb, var(--color-primary) 20%, transparent),
+        inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent)
+  }
+}
+
+@layer utilities {
+
+  /* Mobile Menu animation */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  /* floating green dots (hero section) */
+  @keyframes slow-drift {
+    0%,100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(20px, -30px);
+    }
+    50% {
+      transform: translate(15px, -20px);
+    }
+    75% {
+      transform: translate(30px, 10px);
+    }
+  }
+
+  /* Hero Section Profile Image Floating Badge */
+  @keyframes float {
+    0%,100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* skills section Auto-Move animation */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Mobile Menu animation */
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out both;
+  }
+
+  /* Hero Section Profile Image Floating Badge */
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  /* skills section Auto-Move animation */
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+
+  /* CTA's Download CV Button border Animation */
+
+  @keyframes animated-border {
+    0% {
+      stroke-dashoffset: 400;
+    }
+    100% {
+      stroke-dashoffset: -550;
+    }
+  }
+
+  .group:hover .animated-border-path {
+    animation: animated-border 2s linear infinite reverse;
+  }
+
+  .animated-border:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  }
+
+  /* Experience section Timeline */
+  .timeline-glow{
+    box-shadow: 0 0 40px color-mix(in srgb, var(--color-primary) 35%, transparent),
+                0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  }
+}
