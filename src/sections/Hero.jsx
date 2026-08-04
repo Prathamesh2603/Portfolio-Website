@@ -73,7 +73,7 @@ export const Hero = () => {
               </Button>
               <AnimatedBorderButton>
                 <a 
-                  href="/Prathamesh-Pawar-Frontend-Developer--Resume.pdf"
+                  href="/Prathamesh Pawar --resume.pdf"
                   download
                   target="_blank"
                   rel="noopener noreferrer"
