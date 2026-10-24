@@ -9,6 +9,14 @@ const projects = [
     tags: ["React", "tailwindCSS", "Nodejs", "Express", "MongoDB", "Stripe", "Inngest", "Clerk"],
     link: "https://quick-show-booking-blush.vercel.app/",
     github: "https://github.com/Prathamesh2603/Movie-Ticket-Booking" 
+  },
+  {
+    title: "NOVA Agency",
+    description: "A modern, responsive digital agency website built with React and Tailwind CSS. NOVA features a clean editorial aesthetic, bold typography, project showcases, interactive testimonials, and a strong contact section.",
+    image: "projects/nova-agency-website.png",
+    tags: ["React", "tailwindCSS"],
+    link: "https://nova-agency-alpha.vercel.app/",
+    github: "https://github.com/Prathamesh2603/nova-agency-website" 
   }
 ];
 
