@@ -3,7 +3,7 @@ import { Button } from "../components/Button";
 import { ArrowRight, Github, Twitter, Linkedin, Mail, ChevronDown, Download } from "lucide-react";
 
 export const Hero = () => {
-  const skills = ["HTML","CSS","Javascript","React","TailwindCSS","Git","Github"];
+  const skills = ["HTML","CSS","Javascript","React","TailwindCSS","Node.js","Express.js","MongoDB","Mongoose","Git","Github"];
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -144,11 +144,12 @@ export const Hero = () => {
           <p className="text-sm text-muted-foreground mb-6 text-center">
             Technologies I Work With
           </p>
-          <div className="relative overflow-hidden">
+
+          <div className="relative w-full min-w-0 overflow-hidden">
             <div className="flex animate-marquee">
               {[...skills, ...skills].map((skill, idx) => (
-                <div key={idx} className="shrink-0 px-8 py-4">
-                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                <div key={idx} className="shrink-0 px-6 sm:px-8 py-4">
+                  <span className="text-lg sm:text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
                     {skill}
                   </span>
                 </div>

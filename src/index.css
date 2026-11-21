@@ -141,7 +141,32 @@
 
   /* skills section Auto-Move animation */
   .animate-marquee {
+    display: flex;
+    width: max-content;
     animation: marquee 30s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Pause animation when user hovers */
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+      animation: none;
+    }
   }
 
   .animation-delay-100 {
