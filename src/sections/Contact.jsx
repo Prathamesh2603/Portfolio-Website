@@ -140,6 +140,7 @@ export const Contact = () => {
                   Email
                 </label>
                 <input
+                  type="email"
                   required
                   placeholder="your@email.com"
                   value={formData.email}
